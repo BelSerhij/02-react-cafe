@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import css from "./App.module.css";
 import { useState } from "react";
-import { type VoteTypes } from "../../types/votes";
-import  type Votes  from "../../types/votes";
-import CafeInfo from "../CafeInfo/CafeInfo.module";
-import VoteOptions from "../VoteOptions/VoteOptions.module";
-import VoteStats from "../VoteStats/VoteStats.module";
+import { type VoteType } from "../../types/votes";
+import { type Votes }  from "../../types/votes";
+import CafeInfo from "../CafeInfo/CafeInfo";
+import VoteOptions from "../VoteOptions/VoteOptions";
+import VoteStats from "../VoteStats/VoteStats";
 import Notification from "../Notification/Notification.module";
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
     bad: 0
   });
 
-  const handleVote = (voteType: VoteTypes) => {
+  const handleVote = (voteType: VoteType) => {
     setVotes(prevVotes => ({
       ...prevVotes,
       [voteType]: prevVotes[voteType] + 1
