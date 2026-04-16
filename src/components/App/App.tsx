@@ -36,7 +36,7 @@ const totalVotes = votes.good + votes.neutral + votes.bad;
           <CafeInfo />
           <VoteOptions onVote={handleVote} onReset={resetVotes} canReset={totalVotes > 0} />
         {totalVotes > 0 ? (
-            <VoteStats votes={votes} totalVotes={totalVotes} positiveRate={totalVotes ? Math.round((votes.good + votes.neutral / totalVotes) * 100) : 0} />
+            <VoteStats votes={votes} totalVotes={totalVotes} positiveRate={totalVotes ? Math.round(((votes.good + votes.neutral) / totalVotes) * 100) : 0} />
           ) : (<Notification />)}
     </div>
   );
